@@ -1,0 +1,27 @@
+*{
+    background-color: #152b39;
+}
+h1, h3, a {
+    text-align: center;
+}
+h3 {
+    color: white;
+}
+a, h1 {
+    color: #f65a5b;
+}
+a:hover{
+    color: white;
+}
+#headshot{
+    height: 375px;
+    width: 300px;
+    display: block;
+    margin: auto;
+}
+#linkedin, #resume, #github {
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: 25px auto;
+}
