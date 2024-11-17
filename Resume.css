@@ -1,0 +1,22 @@
+*{
+    background-color:#152b39;
+}
+h1, h3, h4, a {
+    color: #f65a5b;
+}
+li {
+    color: #ffffff;
+}
+h1 {
+    text-align: center;
+}
+.badge{
+    height: 100px;
+    width: 100px;
+}
+ul{
+    list-style-type: square;
+}
+header a:hover{
+    color: white;
+}
