@@ -1,0 +1,30 @@
+* {
+    background-color: #152b39;
+}
+h1, h3, h4, a {
+    color: #f65a5b;
+}
+h1 {
+    text-align: center;
+}
+p {
+    color: #ffffff;
+}
+.coding_certs img {
+    height: 200px;
+    width: 300px;
+}
+#dasmotos_pics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.art_project_pics {
+    height: 400px;
+    width: 400px;
+    margin: auto;
+}
+a:hover {
+    color: white;
+}
