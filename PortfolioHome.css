@@ -14,14 +14,20 @@ a:hover{
     color: white;
 }
 #headshot{
-    height: 375px;
+    height: 300px;
     width: 300px;
     display: block;
-    margin: auto;
+    margin: 0 auto 30px;
+}
+#social_links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    margin: 0 auto;
 }
 #linkedin, #resume, #github {
     height: 50px;
     width: 50px;
-    display: block;
-    margin: 25px auto;
 }
