@@ -13,6 +13,8 @@ p {
 .coding_certs img {
     height: 200px;
     width: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 #dasmotos_pics {
     display: flex;
@@ -27,4 +29,10 @@ p {
 }
 a:hover {
     color: white;
+}
+.javaCalculatorPicture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
