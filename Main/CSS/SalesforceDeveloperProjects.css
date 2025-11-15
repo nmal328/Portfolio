@@ -1,0 +1,62 @@
+* {
+    background-color: #152b39;
+}
+h1, h2, h3, h4, a, th {
+    color: #f65a5b;
+}
+h1 {
+    text-align: center;
+}
+.transaction_flow {
+    height: 250px;
+    width: 150px;
+    display: inline-block;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.transaction_flow2 {
+    height: 250px;
+    width: 250px;
+    display: inline-block;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+#transaction_related_list{
+    display: block;
+    margin: auto;
+    height: 50%;
+    width: 50%;
+}
+.goal_records {
+    display: block;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+}
+#goal_flow_pics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#branch2 {
+    height: 250px;
+    width: 250px;
+    margin-left: 100px;
+}
+#branch3 {
+    height: 350px;
+    width: 350px;
+    margin: 0 auto;
+}
+#branch1 {
+    height: 250px;
+    width: 200px;
+    margin-right: 100px;
+}
+a:hover {
+    color: white;
+}
+td, p, li {
+    color: white;
+}
