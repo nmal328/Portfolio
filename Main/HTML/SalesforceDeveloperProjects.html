@@ -11,209 +11,65 @@
   <body>
     <header>
       <a href="..\..\index.html">Back</a>
-      <h1>My Journey as a Salesforce Developer</h1>
-      <h3>Tab Under Construction</h3>
-      <!--<ol id="contents_table">
-        <li><a href="#Transactional-Function">Transactional Function within Salesforce Org</a></li>
-        <li><a href="#goaling">Transitioning Goaling into Salesforce Org (Active Project)</a></li>
-        <li><a href="#Personnel-Record">Personnel Management Integrated into Salesforce Org</a></li>
-        <li><a href="#on-or-off-production">National NCO Dashboard with On/Off Production Functionality</a></li>
+      <h1>Apex Projects</h1>
+      <h3>EventCloud - Event Management System</h3>
+      <ol id="contents_table">
+        <li><a href="#Project-Overview">Project Overview</a></li>
+        <li><a href="#User-Story1">User Story 1: Initializing Event Status upon Creation</a></li>
+        <li><a href="#User-Story2">User Story 2: Capturing Event Status Change Timestamp</a></li>
+        <li><a href="#on-or-off-production">User Story 3: Defaulting Sponsor Status to 'Pending' on Creation</a></li>
+        <li><a href="#on-or-off-production">User Story 4: Enforcing Email Requirements for Sponsor Creation</a></li>
+        <li><a href="#on-or-off-production">User Story 5: Updating Sponsor Tier Based on Contribution Amount</a></li>
+        <li><a href="#on-or-off-production">User Story 6: Conditional Sponsor Status Update Based on Event Association</a></li>
+        <li><a href="#on-or-off-production">User Story 7: Automatic Update of Net Revenue on Financial Changes</a></li>
+        <li><a href="#on-or-off-production">User Story 8: Updating Event Gross Revenue upon Sponsor Acceptance</a></li>
+        <li><a href="#on-or-off-production">User Story 9: Adjusting Event Gross Revenue for Cancelled Sponsorships or Event Changes</a></li>
       </ol>
     </header>
     <article>
-      <h2 class="project-title" id="Transactional-Function">Transactional Function within Salesforce Org</h2>
-      <h3>The Problem</h3>
-      <p>One of Navy Recruiting Command's (NRC) legacy systems, PRIDE, is a transactional system. This means that throughout the life cycle of an applicant's 
-        onboarding journey with the Navy, PRIDE logs it. It keeps a log of when they joined the Navy and what their job, onboarding start date and ship date
-        are and any changes that may occur to the applicant or their status like changing of jobs, changing of ship dates or even cancelling their contract
-        all together. The problem is with NRC's Salesforce Org, it is NOT transactional like PRIDE is. That means every message PRIDE sends into Salesforce 
-        to update an applicant, the previous data is lost. If a job changes, the previous job is lost and same for ship dates. My task was to create a 
-        transactional feature within Salesforce to mirror PRIDE</p>
-        <h3>The Solution</h3>
-        <p>At the time, NRC was not utilizing Salesforce's Out-of-the-Box Opportunity object yet. My proposal was to bring in Opportunities since they
-          are so closesly tied with Accounts (which NRC uses as Person Accounts to keep applicant records). I made it transactional by utilizing 5 different
-          flows, each being a record triggered flow.</p>
-        <img id="transaction_related_list" src="..\Images\Opportunity Related List.PNG">
-        <h3>The Flows</h3>
-        <img class="transaction_flow" src="..\Images\Onboarding Transaction Flow.PNG">
-        <img class="transaction_flow" src="..\Images\Reclass Transaction Flow.PNG">
-        <img class="transaction_flow2" src="..\Images\Roll-In-Out Transaction Flow.PNG">
-        <img class="transaction_flow" src="..\Images\Ship Transaction Flow.PNG">
-        <img class="transaction_flow2" src="../Images/Attrite Transaction Flow.PNG">
-        <table>
-          <tr>
-            <th><strong>Flow Name</strong></th>
-            <th><strong>Description</strong></th>
-          </tr>
-          <tr>
-            <td>Create Onboarding Transaction</td>
-            <td>This flow is triggered when an Applicant record is either created or updated 
-              to meet a Status of "Onboarding." It then gathers the necessary information from
-              the applicant record and creates an "Onboarding Transaction" record with all the
-              necessary information for trends analysis and health of the Delayed Entry Program
-              (DEP) analysis.</td>
-          </tr>
-          <tr>
-            <td>Create Reclass Transaction</td>
-            <td>This flow is triggered when an Applicant record's Program and Rate field is 
-              changed. When the change happens, however, the record needs to be in Status of 
-              "Onboarding" and the previous value of Program and Rate is NOT blank. This flow 
-              will capture BOTH the previous value for Program and Rate and the new value entered
-              for Program and Rate and enter both of them into a "Reclassification Transaction" record
-              along with other metrics used for analysis.</td>
-          </tr>
-          <tr>
-            <td>Create Roll-In/Roll-Out Transaction</td>
-            <td>This flow is triggered when an Applicant record's Enlisted Ship Date field is 
-              changed. When this change happens, however, the record needs to be in a Status of
-              "Onboarding" and the previous value of the Enlisted Ship Date field is NOT blank. 
-              Once this flow is triggered, it then needs to decide if it will be creating a 
-              "Roll-In Transaction" or a "Roll-Out Transaction." This is done by comparing the 
-              previous value for Enlisted Ship Date and the new value. If the previous value is 
-              greater than the new value, this would indicate an earlier Enlisted Ship Date meaning
-              the applicant is "Rolling In." If the previous value is lesser than the new value, this 
-              would indicate the applicant is "Rolling Out."
-            </td>
-          </tr>
-          <tr>
-            <td>Create Ship Transaction</td>
-            <td>This flow is triggered when an Applicant record's Status 
-              is changed to "Shipped." When this flow is ran, it takes 
-              pertinent data from the Applicant record to create a "Ship 
-              Transaction" record for analysis in shipping trends and 
-              seats being filled at bootcamp.</td>
-          </tr>
-          <tr>  
-            <td>Attrite Transaction Decide</td>
-            <td>This flow is triggered when the Applicant record's Status 
-              is changed to "Attrite." When an applicant "Attrites" it 
-              means they decided to quit their contract and not pursue going 
-              to bootcamp and becoming a Sailor anymore. This flow will gather 
-              necessary Attrite data from the applicant's record and create an 
-              "Attrite Transaction" record. Attrite trends are monitored very 
-              closely as the the Navy's many fleets can't be manned if Future 
-              Sailors don't ship off to bootcamp.</td>
-          </tr>
-        </table>
-        <br>
+      <h2 class="project-title" id="Project-Overview">Project Overview</h2>
+      <p>The idea behind this project is to be able to successfully solution through
+      the given problems throughout the User Stories. Each User Story is well written
+      comes with Acceptance Criteria and specific tests to verify your solution works. 
+      This project places you in the shoes of a "new hire" at EventCloud and gives you
+      the freedom to take the "clicks not code" approach, or dive into Apex and solution
+      through on the "back end". I chose to work through each User Story strictly with 
+      Apex Triggers and TriggerHandler classes. Below are the two Triggers I wrote following
+      the Trigger Handler Framework Salesforce recommends.</p>
+        <div id="Apex-Container">
+          <img id="Trigger" src="..\Images\CampxEventTrigger.PNG">
+          <img id="Trigger" src="..\Images\CampxSponsorTrigger.PNG">
+        </div>
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story1">User Story 1 (Yellow): Initializing Event Status upon Creation</h2>
+      <h3>User Story</h3>
+      <p>As an event coordinator,<br>
+      I need the system to automatically place a newly created event record into a planning status,<br>
+      So that we can start the event organization process with a clear, initial state that indicates 
+      the event is in the early stages of planning.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>When a new CAMPX__Event__c record is created, the CAMPX__Status__c field should reflect the 
+        "Planning" picklist value</p>
+      <div id="Apex-Container">
+          <img id="Event-beforeInsert" src="..\Images\CampxEventTriggerHandler beforeInsert Method.png">
+      </div>  
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story2">User Story 2 (Red): Capturing Event Status Change Timestamp</h2>
+      <h3>User Story</h3>
+      <p>As an event coordinator,<br>
+        I need the system to automatically capture the current date and time whenever the status of an event changes,<br>
+        So that we can have an accurate and automatic record of when each event's status was last modified, helping in 
+        timeline tracking and accountability.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>When the CAMPX__Status__c field of an CAMPX__Event__c record is edited, the CAMPX__StatusChangeDate__c 
+        field should capture the current date and time</p>
+        <div id="Apex-Container">
+          <img id="Event-beforeInsert" src="..\Images\CampxEventTriggerHandler beforeInsert Method.png">
+          <img id="Event-beforeUpdate" src="..\Images\CampxEventTriggerHandler beforeUpdate Method.png">
+        </div>
         <a href="#contents_table">Back to Top</a>
     </article>
-    <article>
-      <h2 class="project-title" id="goaling">Transitioning Goaling into Salesforce Org (Active Project)</h2>
-      <h3>The Problem</h3>
-      <p>This is the first part to a series of transitions that will eventually take the legacy NRC system called WebSTEAM into retirement. The first, and one of the biggest, aspects of this 
-        system is tracking the goal assigned to each command. Every Station, known as NRS Name, all the way up to NRC will have a goal assigned to them for each month of the fiscal year. This 
-        needs to be brought into Salesforce to present cleanly to top echelon leadership how each command is doing and if NRC will make its assigned goal and missions for the fiscal year.</p>
-      <h3>The Solution</h3>
-      <p>I went ahead and created a series of five new custom objects. Those are "NRS Goal", "Division Goal", "NTAG Goal", "Region Goal" and "NRC Goal". Each, as the object name should suggest 
-        will track either a station, division, NTAG, region or NRCs goal for any given month. NRS Goal is linked via Master-Detail Relationship to Division Goal, Division Goal is linked via 
-        another Master-Detail Relationship to NTAG Goal and NTAG goal is linked by the last Master-Detail Relationship in the chain to Region Goal. Due to the limitation of 3 Master-Detail 
-        Relationship links within a chain, I created two Lookup Relationship fields on the NRC Goal object. The first one is labelled "Region East Goal" and the second one "Region West Goal". 
-        The NRS Goal record is really the only record that will have the majority of data entered into it when creating a new record. Upon creation, each commands Statistician will have to enter 
-        a number for the station's Total Goal, Active Duty goal, Reserve goal, Nuclear contract goal, Special Warfare contract goal and a goal for contracts that got higher than a 50 on the ASVAB. 
-        After all of that is inputted, a series of Roll-Up Summary fields on the rest of the objects except for NRC Goal is utilized to calculate that respective records number for that goal. On 
-        the NRC Goal object, everything that could NOT be a Roll-Up Summary field was a Formula field instead adding up each field from the "Region East Goal" and "Region West Goal" records. A 
-        series of flows is also utilized for this solution to calculate contract attainment and goaling record association.</p>
-      <img class="goal_records" src="..\Images\NRS Goal Record.PNG">
-      <br>
-      <img class="goal_records" src="..\Images\Division Goal Record.PNG">
-      <br>
-      <img class="goal_records" src="..\Images\NTAG Goal Record.PNG">
-      <br>
-      <img class="goal_records" src="..\Images\Region Goal Record.PNG">
-      <br>
-      <img class="goal_records" src="..\Images\NRC Goal Record.PNG">
-      <h3>The Flows</h3>
-      <table>
-        <tr>
-          <th><strong>Flow Name</strong></th>
-          <th><strong>Description</strong></th>
-        </tr>
-        <tr>
-          <td>Assign NRS Goal to Transaction</td>
-          <td>This flow is triggered when an Opportunity record is created with a Type equalling either "NCO" or "Attrite". After it's triggered, it will decide on which NRS Goal record 
-            to get based on the Type of Opportunity. If it was "NCO", it grabs the the NRS Goal record with the same RSID as the Opportunity record, and the same month and fiscal year as 
-            the Onboarding Start Date field. If it was "Attrite", it does the same thing except based on the Attrite Date field. After it gets the necessary data from the Opportunity and 
-            NRS Goal records, it updates the correct Opportunity record with the correct NRS Goal record ID to associate the Lookup relationship.
-          </td>
-        </tr>
-        <tr>
-          <td>NRS Goal Number Crunch</td>
-          <td>This flow, like the last one, is triggered when an Opportunity record is created, however the Type must either be "NCO", "Attrite" or "Reclassification". IT then makes the decision 
-            on which NRS Goal record to get based on the Type of Opportunity. If the Type is "NCO", it gets the NRS Goal record based off the RSIDs matching for both records and the month and 
-            fiscal year from the Onboarding Start Date field matching the NRS Goal records. Once the record is retrieved, it will add whatever the kind of contract the Opportunity record is with 
-            whatever is currently within the Attainment fields on the NRS Goal record. This is done based on a series of IF statements nested with other IF statements, AND statements and OR 
-            statements. The next decision branch is based off of the Type "Reclassification" which will match the record based off of RSID and the month and fiscal year of the Transaction Date. 
-            The last decision branch is based off of the Type "Attrite" where it compares the RSIDs of both records and the month and fiscal year of the Attrite Date field. This branch is similar 
-            to the "NCO" branch except is subtracts numbers instead of adding them. The "Reclassification" branch does both adding and subtracting based on the contract type. After the specific 
-            branch has ran, it will take the Record ID from the NRS Goal retrieved and update the Attainment number fields with the variables filled in by the respective formulas.
-          </td>
-        </tr>
-        <tr>
-          <td>Same Day Transaction Goal Number Crunch</td>
-          <td>This flow is triggered when an Opportunity record is DELETED with a type of "NCO". It will perform pretty much the same function as the "Attrite" branch from the previous flow and 
-            subtract whatever contract data necessary from the NRS Goal's Attainment number field. This is important because when a Same Day Transaction occurs, an Attrite Transaction is not 
-            created. Instead, that flow actually deletes the NCO Transaction that was previously created minutes before the Attrite message was received by Salesforce.
-          </td>
-        </tr>
-      </table>
-      <br>
-      <div id="goal_flow_pics">
-        <img id="branch2" src="..\Images\Assign NRS Goal to Transaction Flow.PNG">
-        <img id="branch3" src="..\Images\NRS Goal Number Crunch Flow.PNG">
-        <img id="branch1" src="..\Images\Same Day Transaction Flow.PNG">
-      </div>
-      <br>
-      <a href="#contents_table">Back to Top</a> 
-    </article>
-    <article>
-      <h2 class="project-title" id="Personnel-Record">Personnel Management Integrated into Salesforce Org</h2>
-      <!--Insert screenshot of a Personnel Record--
-      <h3>The Problem</h3>
-      <p>NRC was using an outdated and barely used legacy system to keep track 
-        of personnel assigned to Recruiting Command. Since the system was 
-        antiquated, NRC requested a Personnel Management functionality be developed 
-        within the current Org they operate in.</p>
-      <h3>The Solution</h3>
-      <p>Due to some limitations within government contracting and MOUs, my team 
-        doesn't usually conduct development using standard objects, except in rare 
-        and highly scrutinized occasions. For this project, I built a custom object 
-        called "Personnel Records" where we would capture all the required data needed 
-        on personnel assigned to Recruiting Command. This wasn't a very intricate project 
-        outside of designing the Lightning Page for the object which encapsulates 
-        different field visibility based on data within other fields.</p>
-        <p>Shortly after demoing this new custom object, there arose another need 
-          with this request. Inspection teams required a historical report of where 
-          a recruiter was assigned during a certain period of time. This requiest led 
-          to the development of a rear facing "PSR History" custom object. Since it's 
-          rear facing, users don't have access to the actual object outside of a related 
-          list on the "Personnel Record" record. PSR History records are created via 
-          a record triggered flow that will capture all the data from a Personnel Record 
-          record whenever it's updated or created. This creates a historical feature to 
-          the object that helps during investigations and discussions of manning and where 
-          place recruiters throughout the nation.</p>
-        <!--Insert a screenshot of the history related list--
-        <a href="#contents_table">Back to Top</a>
-    </article>
-    <article>
-      <h2 class="project-title" id="on-or-off-production">National NCO Dashboard with On/Off Production Functionality</h2>
-      <h3>The Problem</h3>
-      <p>The point of having a National NCO dashboard is for upper level leadership at NRC 
-        Headquarters to be able to have a one stop shop for how commands throughout the nation 
-        are doing on achieving their goals. This dashboard breaks it down by command, division 
-        and individual recruiter. The problem was with the fact that there was no easy way of 
-        getting a recruiter off that dashboard if there was any reason for them to be off production 
-        for any period of time. They would have to submit a ticket to get their role and territory 
-        elevated to the command level to get them off the dashboard.</p>
-        <h3>The Solution</h3>
-        <p>With the development of the "Personnel Record" custom object, there was a picklist field 
-          created called "On Production." If the recruiter was on production, the field was marked yes
-          and if not, it was marked no. The new National NCO Dashboard's reports were now given a filter
-          that the records featured in those reports needed to have their associated Personnel Record as 
-          being On Production. With the addition of this filter, now commands simply needed to go into 
-          that recruiter's Personnel Record and mark their "On Production" field as no until their return 
-          and they were no longer featured on the dashboard.</p>
-          <a href="#contents_table">Back to Top</a>
-    </article>-->
   </body>
 </html>
