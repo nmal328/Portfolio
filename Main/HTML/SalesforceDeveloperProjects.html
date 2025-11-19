@@ -36,8 +36,21 @@
       through on the "back end". I chose to work through each User Story strictly with 
       Apex Triggers and TriggerHandler classes. Below are the two Triggers I wrote following
       the Trigger Handler Framework Salesforce recommends.</p>
+      <h2 class="project-title" id="Project-Overview">Apex Classes and Triggers</h2>
         <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
+          <h3><a href="..\Images\CampxEventTrigger.png">See the EventTrigger Here!</a></h3>
+          <h3><a href="..\Images\CampxSponsorTrigger.png">See the SponsorTrigger Here!</a></h3>
+        </div>
+        <div id="Solution-Container">
+          <h3><a href="..\Images\CampxEventTriggerHandler before Methods.png">See the EventTriggerHandler before Methods Here!</a></h3>
+        </div>
+        <div id="Solution-Container">
+          <h3><a href="..\Images\CampxSponsorTriggerHandler beforeInsert Method.png">See the SponsorTriggerHandler beforeInsert Method Here!</a></h3>
+          <h3><a href="..\Images\CampxSponsorTriggerHandler beforeUpdate Method.png">See the SponsorTriggerHandler beforeUpdate Method Here!</a></h3>
+        </div>
+        <div id="Solution-Container">
+          <h3><a href="..\Images\CampxSponsorTriggerHandler afterInsert Method.png">See the SponsorTriggerHandler afterInsert Method Here!</a></h3>
+          <h3><a href="..\Images\CampxSponsorTriggerHandler afterUpdate Method.png">See the SponsorTriggerHandler afterUpdate Method Here!</a></h3>
         </div>
     </article>
     <article>
@@ -49,10 +62,7 @@
       the event is in the early stages of planning.</p>
       <h3>Acceptance Criteria</h3>
       <p>When a new CAMPX__Event__c record is created, the CAMPX__Status__c field should reflect the 
-        "Planning" picklist value</p>
-      <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-      </div>  
+        "Planning" picklist value</p>  
       <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
@@ -65,9 +75,6 @@
       <h3>Acceptance Criteria</h3>
       <p>When the CAMPX__Status__c field of an CAMPX__Event__c record is edited, the CAMPX__StatusChangeDate__c 
         field should capture the current date and time</p>
-        <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-        </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
@@ -79,9 +86,6 @@
         the sponsorship management process.</p>
       <h3>Acceptance Criteria</h3>
       <p>When a CAMPX__Sponsor__c record is created, and the CAMPX__Status__c is blank, it should be set to "Pending"</p>
-        <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-        </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
@@ -94,9 +98,6 @@
       <h3>Acceptance Criteria</h3>
       <p>When a CAMPX__Sponsor__c record is created without a value in CAMPX__Email__c, 
         the user should see an error stating "A sponsor can not be created without an email address"</p>
-        <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-        </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
@@ -134,9 +135,6 @@
           <td>CAMPX__ContributionAmount__c >= 5000</td>
         </tr>
       </table>
-        <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-        </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
@@ -152,9 +150,6 @@
         until the CAMPX__Event__c field is populated</p>
       <p>The user should see this error when attempting to accept a sponsor without an event: 
         "A Sponsor must be associated with an event before being Accepted."</p>
-        <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-        </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
@@ -170,9 +165,6 @@
         CAMPX__GrossRevenue__c - CAMPX__TotalExpenses__c</p>
       <p>If either CAMPX__GrossRevenue__c or CAMPX__TotalExpenses__c are blank, the 
         CAMPX__NetRevenue__c should be blank</p>
-        <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-        </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
@@ -186,9 +178,6 @@
       <h3>Acceptance Criteria</h3>
       <p>When a CAMPX__Sponsor__c record is updated to have an "Accepted" CAMPX__Status__c, the 
         system should account for the sponsor's CAMPX__ContributedAmount__c in the CAMPX__Event__c's CAMPX__GrossRevenue__c field</p>
-        <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-        </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
@@ -204,9 +193,6 @@
         associated CAMPX__Event__c's CAMPX__GrossRevenue__c field should no longer reflect the sponsor's CAMPX__ContributedAmount__c</p>
       <p>When the CAMPX__Event__c lookup of a CAMPX__Sponsor__c changes, the previously associated CAMPX__Event__c's CAMPX__GrossRevenue__c 
         field should no longer reflect the sponsor's CAMPX__ContributedAmount__c</p>
-        <div id="Solution-Container">
-          <h3><a href="">See Solution Here!</a></h3>
-        </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
   </body>
