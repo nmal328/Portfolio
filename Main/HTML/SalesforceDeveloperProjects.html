@@ -11,9 +11,9 @@
   <body>
     <header>
       <a href="..\..\index.html">Back</a>
-      <h1>Apex Projects</h1>
+      <h1 id="Top-of-Page">Apex Projects</h1>
       <h3>EventCloud - Event Management System</h3>
-      <ol id="contents_table">
+      <ol>
         <li><a href="#Project-Overview">Project Overview</a></li>
         <li><a href="#User-Story1">User Story 1: Initializing Event Status upon Creation</a></li>
         <li><a href="#User-Story2">User Story 2: Capturing Event Status Change Timestamp</a></li>
@@ -54,6 +54,7 @@
       <div id="Apex-Container">
           <img id="Event-beforeInsert" src="..\Images\CampxEventTriggerHandler beforeInsert Method.png">
       </div>  
+      <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
       <h2 class="project-title" id="User-Story2">User Story 2 (Red): Capturing Event Status Change Timestamp</h2>
@@ -69,7 +70,22 @@
           <img id="Event-beforeInsert" src="..\Images\CampxEventTriggerHandler beforeInsert Method.png">
           <img id="Event-beforeUpdate" src="..\Images\CampxEventTriggerHandler beforeUpdate Method.png">
         </div>
-        <a href="#contents_table">Back to Top</a>
+        <a href="#Top-of-Page">Back to Top</a>
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story3">User Story 3 (Red): Defaulting Sponsor Status to 'Pending' on Creation</h2>
+      <h3>User Story</h3>
+      <p>As a sponsorship coordinator,<br>
+        I need the system to automatically mark a sponsor as "Pending" if the field is blank upon creation,<br>
+        So that we can ensure all sponsors are initially considered for review and categorization, streamlining 
+        the sponsorship management process.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>When a CAMPX__Sponsor__c record is created, and the CAMPX__Status__c is blank, it should be set to "Pending"</p>
+        <div id="Apex-Container">
+          <img id="Event-beforeInsert" src="..\Images\CampxEventTriggerHandler beforeInsert Method.png">
+          <img id="Event-beforeUpdate" src="..\Images\CampxEventTriggerHandler beforeUpdate Method.png">
+        </div>
+        <a href="#Top-of-Page">Back to Top</a>
     </article>
   </body>
 </html>
