@@ -16,6 +16,12 @@ h1 {
     width: 100%;
     margin: 0 auto;
 }
+@media (max-width: 600px) {
+    #Solution-Container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
 a:hover {
     color: white;
 }
