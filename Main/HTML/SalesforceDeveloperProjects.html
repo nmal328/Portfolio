@@ -17,13 +17,13 @@
         <li><a href="#Project-Overview">Project Overview</a></li>
         <li><a href="#User-Story1">User Story 1: Initializing Event Status upon Creation</a></li>
         <li><a href="#User-Story2">User Story 2: Capturing Event Status Change Timestamp</a></li>
-        <li><a href="#on-or-off-production">User Story 3: Defaulting Sponsor Status to 'Pending' on Creation</a></li>
-        <li><a href="#on-or-off-production">User Story 4: Enforcing Email Requirements for Sponsor Creation</a></li>
-        <li><a href="#on-or-off-production">User Story 5: Updating Sponsor Tier Based on Contribution Amount</a></li>
-        <li><a href="#on-or-off-production">User Story 6: Conditional Sponsor Status Update Based on Event Association</a></li>
-        <li><a href="#on-or-off-production">User Story 7: Automatic Update of Net Revenue on Financial Changes</a></li>
-        <li><a href="#on-or-off-production">User Story 8: Updating Event Gross Revenue upon Sponsor Acceptance</a></li>
-        <li><a href="#on-or-off-production">User Story 9: Adjusting Event Gross Revenue for Cancelled Sponsorships or Event Changes</a></li>
+        <li><a href="#User-Story3">User Story 3: Defaulting Sponsor Status to 'Pending' on Creation</a></li>
+        <li><a href="#User-Story4">User Story 4: Enforcing Email Requirements for Sponsor Creation</a></li>
+        <li><a href="#User-Story5">User Story 5: Updating Sponsor Tier Based on Contribution Amount</a></li>
+        <li><a href="#User-Story6">User Story 6: Conditional Sponsor Status Update Based on Event Association</a></li>
+        <li><a href="#User-Story7">User Story 7: Automatic Update of Net Revenue on Financial Changes</a></li>
+        <li><a href="#User-Story8">User Story 8: Updating Event Gross Revenue upon Sponsor Acceptance</a></li>
+        <li><a href="#User-Story9">User Story 9: Adjusting Event Gross Revenue for Cancelled Sponsorships or Event Changes</a></li>
       </ol>
     </header>
     <article>
@@ -36,13 +36,12 @@
       through on the "back end". I chose to work through each User Story strictly with 
       Apex Triggers and TriggerHandler classes. Below are the two Triggers I wrote following
       the Trigger Handler Framework Salesforce recommends.</p>
-        <div id="Apex-Container">
-          <img id="Trigger" src="..\Images\CampxEventTrigger.PNG">
-          <img id="Trigger" src="..\Images\CampxSponsorTrigger.PNG">
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
         </div>
     </article>
     <article>
-      <h2 class="project-title" id="User-Story1">User Story 1 (Yellow): Initializing Event Status upon Creation</h2>
+      <h2 class="project-title" id="User-Story1">User Story 1: Initializing Event Status upon Creation</h2>
       <h3>User Story</h3>
       <p>As an event coordinator,<br>
       I need the system to automatically place a newly created event record into a planning status,<br>
@@ -51,13 +50,13 @@
       <h3>Acceptance Criteria</h3>
       <p>When a new CAMPX__Event__c record is created, the CAMPX__Status__c field should reflect the 
         "Planning" picklist value</p>
-      <div id="Apex-Container">
-          <img id="Event-beforeInsert" src="..\Images\CampxEventTriggerHandler beforeInsert Method.png">
+      <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
       </div>  
       <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
-      <h2 class="project-title" id="User-Story2">User Story 2 (Red): Capturing Event Status Change Timestamp</h2>
+      <h2 class="project-title" id="User-Story2">User Story 2: Capturing Event Status Change Timestamp</h2>
       <h3>User Story</h3>
       <p>As an event coordinator,<br>
         I need the system to automatically capture the current date and time whenever the status of an event changes,<br>
@@ -66,14 +65,13 @@
       <h3>Acceptance Criteria</h3>
       <p>When the CAMPX__Status__c field of an CAMPX__Event__c record is edited, the CAMPX__StatusChangeDate__c 
         field should capture the current date and time</p>
-        <div id="Apex-Container">
-          <img id="Event-beforeInsert" src="..\Images\CampxEventTriggerHandler beforeInsert Method.png">
-          <img id="Event-beforeUpdate" src="..\Images\CampxEventTriggerHandler beforeUpdate Method.png">
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
         </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
     <article>
-      <h2 class="project-title" id="User-Story3">User Story 3 (Red): Defaulting Sponsor Status to 'Pending' on Creation</h2>
+      <h2 class="project-title" id="User-Story3">User Story 3: Defaulting Sponsor Status to 'Pending' on Creation</h2>
       <h3>User Story</h3>
       <p>As a sponsorship coordinator,<br>
         I need the system to automatically mark a sponsor as "Pending" if the field is blank upon creation,<br>
@@ -81,9 +79,133 @@
         the sponsorship management process.</p>
       <h3>Acceptance Criteria</h3>
       <p>When a CAMPX__Sponsor__c record is created, and the CAMPX__Status__c is blank, it should be set to "Pending"</p>
-        <div id="Apex-Container">
-          <img id="Event-beforeInsert" src="..\Images\CampxEventTriggerHandler beforeInsert Method.png">
-          <img id="Event-beforeUpdate" src="..\Images\CampxEventTriggerHandler beforeUpdate Method.png">
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
+        </div>
+        <a href="#Top-of-Page">Back to Top</a>
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story4">User Story 4: Enforcing Email Requirements for Sponsor Creation</h2>
+      <h3>User Story</h3>
+      <p>As a sponsorship coordinator,<br>
+        I need the system to prevent the creation of a sponsor without an email,<br>
+        So that we can ensure all sponsor records have valid contact information, 
+        facilitate communication, and maintain the integrity of our sponsor database.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>When a CAMPX__Sponsor__c record is created without a value in CAMPX__Email__c, 
+        the user should see an error stating "A sponsor can not be created without an email address"</p>
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
+        </div>
+        <a href="#Top-of-Page">Back to Top</a>
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story5">User Story 5: Updating Sponsor Tier Based on Contribution Amount</h2>
+      <h3>User Story</h3>
+      <p>As a event coordinator,<br>
+        I need the system to automatically set a sponsor's tier based on their contribution amount,<br>
+        So that we can ensure sponsors are recognized appropriately for their contribution level and 
+        streamline the sponsorship management process.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>The CAMPX__Tier__c should be set based on the following mapping:</p>
+      <table>
+        <tr>
+          <th><strong>CAMPX__Tier__c</strong></th>
+          <th><strong>CAMPX__ContributionAmount__c</strong></th>
+        </tr>
+        <tr>
+          <td>Null</td>
+          <td>CAMPX__ContributionAmount__c is blank</td>
+        </tr>
+        <tr>
+          <td>Null</td>
+          <td>CAMPX__ContributionAmount__c <= 0</td>
+        </tr>
+        <tr>
+          <td>Bronze</td>
+          <td>CAMPX__ContributionAmount__c < 1000</td>
+        </tr>
+        <tr>
+          <td>Silver</td>
+          <td>1000 <= CAMPX__ContributionAmount__c < 5000</td>
+        </tr>
+        <tr>
+          <td>Gold</td>
+          <td>CAMPX__ContributionAmount__c >= 5000</td>
+        </tr>
+      </table>
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
+        </div>
+        <a href="#Top-of-Page">Back to Top</a>
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story6">User Story 6: Conditional Sponsor Status Update Based on Event Association</h2>
+      <h3>User Story</h3>
+      <p>As a sponsorship coordinator,<br>
+        I need the system to prevent the status of a sponsor record from being updated to 
+        "Accepted" unless it is associated with an event,<br>
+        So that we can maintain accurate and meaningful sponsor-event 
+        relationships and ensure accepted sponsors are properly linked to specific events.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>The CAMPX__Status__c field of a CAMPX__Sponsor__c record can not be updated to "Accepted" 
+        until the CAMPX__Event__c field is populated</p>
+      <p>The user should see this error when attempting to accept a sponsor without an event: 
+        "A Sponsor must be associated with an event before being Accepted."</p>
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
+        </div>
+        <a href="#Top-of-Page">Back to Top</a>
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story7">User Story 7: Automatic Update of Net Revenue on Financial Changes</h2>
+      <h3>User Story</h3>
+      <p>As a financial manager,<br>
+          I need the system to automatically update the net revenue of an event record whenever there are 
+          changes to its gross revenue or total expenses,<br>
+          So that we can ensure real-time accuracy of our financial reporting and provide 
+          stakeholders with up-to-date information on the financial status of our events.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>The CAMPX__NetRevenue__c of an CAMPX__Event__c record should always reflect the formula: 
+        CAMPX__GrossRevenue__c - CAMPX__TotalExpenses__c</p>
+      <p>If either CAMPX__GrossRevenue__c or CAMPX__TotalExpenses__c are blank, the 
+        CAMPX__NetRevenue__c should be blank</p>
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
+        </div>
+        <a href="#Top-of-Page">Back to Top</a>
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story8">User Story 8: Updating Event Gross Revenue upon Sponsor Acceptance</h2>
+      <h3>User Story</h3>
+      <p>As a finance manager,<br>
+        I need the system to automatically keep track of an event's gross revenue by taking a sum 
+        of all accepted sponsor's contributions,<br>
+        So that we can maintain an accurate and real-time tally of an event's gross 
+        revenue and ensure that financial reporting reflects all accepted sponsor contributions.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>When a CAMPX__Sponsor__c record is updated to have an "Accepted" CAMPX__Status__c, the 
+        system should account for the sponsor's CAMPX__ContributedAmount__c in the CAMPX__Event__c's CAMPX__GrossRevenue__c field</p>
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
+        </div>
+        <a href="#Top-of-Page">Back to Top</a>
+    </article>
+    <article>
+      <h2 class="project-title" id="User-Story9">User Story 9: Adjusting Event Gross Revenue for Cancelled Sponsorships or Event Changes</h2>
+      <h3>User Story</h3>
+      <p>As a finance manager,<br> 
+        I need the system to automatically subtract a sponsor's contribution amount from its associated event's gross 
+        revenue when the sponsor is no longer "Accepted" or tied to the event,<br>
+        So that our financial records accurately reflect the current status of sponsor contributions and 
+        ensure that the event's gross revenue reports are precise and reliable for making informed decisions.</p>
+      <h3>Acceptance Criteria</h3>
+      <p>When the CAMPX__Status__c of a CAMPX__Sponsor__c changes from "Accepted" to "Cancelled" or "Pending" the 
+        associated CAMPX__Event__c's CAMPX__GrossRevenue__c field should no longer reflect the sponsor's CAMPX__ContributedAmount__c</p>
+      <p>When the CAMPX__Event__c lookup of a CAMPX__Sponsor__c changes, the previously associated CAMPX__Event__c's CAMPX__GrossRevenue__c 
+        field should no longer reflect the sponsor's CAMPX__ContributedAmount__c</p>
+        <div id="Solution-Container">
+          <h3><a href="">See Solution Here!</a></h3>
         </div>
         <a href="#Top-of-Page">Back to Top</a>
     </article>
